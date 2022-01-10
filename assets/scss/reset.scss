@@ -76,7 +76,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+#__nuxt {
+    width: 100%;
+    overflow: hidden
+}
 .grid {
     @include flexbox;
     align-items: center;
