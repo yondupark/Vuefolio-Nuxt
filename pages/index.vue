@@ -5,7 +5,9 @@
           <div>
             <h2>
               Hello World!<br />
-              I’m <span>Sang Wan Park.</span>
+              I’m <span>S.W Park.</span>
+              <number class="number" :from="0" :to="2020" :duration="2"/>
+
             </h2>
             <div> 
               <p>
@@ -45,15 +47,15 @@
             </span>
           </nuxt-link>
         </div>
-        <ul class="boardmain">
-          <li v-for="(board, idx) in board" :key="idx">
-            <nuxt-link :to="{ name: 'boardDetail', params: { id: idx }}">
+        <ul class="workslists">
+          <li v-for="(listData, idx) in listdata.slice(0,3)" :key="idx">
+            <nuxt-link to="/Myworks/WorksDetail">
                 <div class="image">
-                    <img :src="`${board.Image}`" alt="">
+                    <img :src="`${listData.Image}`" alt="">
                 </div>
                 <div class="texts">
-                    <h3 class="title">{{ board.From }}</h3>
-                    <p>{{ board.Title }}</p>
+                    <p class="title2">{{ listData.Title }}</p>
+                    <h3 class="title">{{ listData.From }}</h3>
                 </div>
             </nuxt-link>
           </li>
@@ -75,12 +77,9 @@
           <li>
             <h3>Based On</h3>
             <ul>
-              <li>HTML5 / CSS3</li>
-              <li>Responsive</li>
-              <li>Web Accessibility</li>
-              <li>Javascript / JQuery</li>
-              <li>Sass / Less</li>
-              <li>Git / SVN</li>
+                <li v-for="basedata in basedon" :key="basedata">                    
+                    {{ basedata }}
+                </li>
             </ul>
           </li>
 
@@ -88,11 +87,9 @@
           <li>
             <h3>Tools</h3>
             <ul>
-              <li>VS Code</li>
-              <li>Photoshop</li>
-              <li>Zeplin</li>
-              <li>Figma</li>
-              <li>Adobe XD</li>
+                <li v-for="toolsdata in tools" :key="toolsdata">                    
+                    {{ toolsdata }}
+                </li>
             </ul>
           </li>
 
@@ -100,10 +97,9 @@
           <li>
             <h3>Interests</h3>
             <ul>
-              <li>React / Vue</li>
-              <li>WebGL</li>
-              <li>3D Modeling</li>
-              <li>Interaction</li>
+                <li v-for="Interestsdata in Interests" :key="Interestsdata">                    
+                    {{ Interestsdata }}
+                </li>
             </ul>
           </li>
         </ul>
@@ -162,6 +158,23 @@
 </template>
 
 <script>
+import listData from '@/static/listdata.js';
+
+export default {
+  name: 'IndexPage',
+  data() {
+    return {
+      listdata: listData,
+      basedon: ['HTML5 / CSS3','Responsive','Web Accessibility','Javascript','Sass / Less','Git / SVN'],
+      tools: ['VS Code','Photoshop','Zeplin','Figma','Adobe XD'],
+      Interests: ['React / Vue','WebGL','3D Modeling','Interaction',]
+    }
+  },
+  mounted() {
+      calcdays(); // 마운트가 완료되면 날짜를 삽입
+  },
+}
+
 function calcdays() {
   const dday = new Date("08 01, 2013").getTime();
   const today = new Date().getTime();
@@ -169,18 +182,10 @@ function calcdays() {
   const day = Math.ceil(gap / (1000 * 60 * 60 * 24));
   document.getElementById("count").innerHTML = day;
 }
-
-
-export default {
-  name: 'IndexPage',
-  mounted() {
-      calcdays(); // 마운트가 완료되면 날짜를 삽입
-  },
-}
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 .vueHome {
   background:#F8FEFF;
   padding: 15.8rem 0 9.2rem;
@@ -363,22 +368,27 @@ export default {
     font-size: 1.8rem;
   }
 }
-.portfolios .boardmain  li {
-  &:hover {
-    position: relative;
-    box-shadow: 0 0 10px 10px rgba(0,0,0,0.3);
-    transform: scale(1.1);
-    z-index: 999;
-  }
-  .image{
-    height: 20rem;
-    img {
-      display: block;
+.workslists {
+  margin-top: 2rem;
+  justify-content: space-between;
+  li {
+    width: 30%;
+    &:hover {
       position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      height: auto;
-      width: 100%;
+      box-shadow: 0 0 10px 10px rgba(0,0,0,0.3);
+      transform: scale(1.1);
+      z-index: 999;
+    }
+    .image{
+      height: 20rem;
+      img {
+        display: block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        height: auto;
+        width: 100%;
+      }
     }
   }
 }

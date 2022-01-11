@@ -1,7 +1,13 @@
 <template>
-  <div>
+  <main>
     <Header />
     <Nuxt />
     <Footer />
-  </div>
+  </main>
 </template>
+
+<script>
+export default {
+    name: 'DefaulLayout',
+}
+</script>

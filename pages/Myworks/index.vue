@@ -6,8 +6,8 @@
         <h2>My works</h2>
       </div>
       <ul class="v_listup">
-          <li v-for="(board, idx) in board" :key="idx">
-            <router-link :to="{ name: 'boardDetail', params: { id: idx }}">
+          <li v-for="(board, idx) in listdata" :key="idx">
+            <nuxt-link to="/Myworks/WorksDetail">
                 <div class="image">
                     <img :src="`${board.Image}`" alt="">
                 </div>
@@ -15,7 +15,7 @@
                     <p class="title2">{{ board.Title }}</p>
                     <h3 class="title">{{ board.From }}</h3>
                 </div>
-            </router-link>
+            </nuxt-link>
           </li>
       </ul>
     </div>  
@@ -23,11 +23,15 @@
 </template>
 
 <script>
+import listData from '@/static/listdata.js';
+
 export default {
     name: 'ListPage',
-    props: {
-        board : Array
+  data() {
+    return {
+      listdata: listData,
     }
+  },
 }
 </script>
 
