@@ -40,6 +40,7 @@
 
 <script>
 export default {
+  name: 'ReviewPage',
   head: {
     title: 'Review',
     meta: [
@@ -49,8 +50,7 @@ export default {
         content: 'description'
       }
     ],
-  },
-  name: 'ReviewPage'
+  }
 };
 </script>
 

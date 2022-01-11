@@ -210,6 +210,7 @@
 
 <script>
 export default {
+  name: 'CareerPage',
   head: {
     title: 'Career',
     meta: [
@@ -219,8 +220,7 @@ export default {
         content: 'description'
       }
     ],
-  },
-  name: 'CareerPage'
+  }
 };
 </script>
 

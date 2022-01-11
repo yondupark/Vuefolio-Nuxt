@@ -161,16 +161,6 @@
 import listData from '@/static/listdata.js'
 
 export default {
-  head: {
-    title: 'Home',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Home page description'
-      }
-    ],
-  },
   name: 'IndexPage',
   data() {
     return {
@@ -186,6 +176,12 @@ export default {
       tools: ['VS Code', 'Photoshop', 'Zeplin', 'Figma', 'Adobe XD'],
       Interests: ['React / Vue', 'WebGL', '3D Modeling', 'Interaction'],
     }
+  },
+  head: {
+    title: 'Home',
+    hid: 'description',
+    name: 'description',
+    content: 'description'
   },
   mounted() {
     calcdays() // 마운트가 완료되면 날짜를 삽입

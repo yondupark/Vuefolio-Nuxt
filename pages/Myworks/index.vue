@@ -26,6 +26,12 @@
 import listData from '@/static/listdata.js';
 
 export default {
+  name: 'ListPage',
+  data() {
+    return {
+      listdata: listData,
+    }
+  },
   head: {
     title: 'My Works Lists',
     meta: [
@@ -35,12 +41,6 @@ export default {
         content: 'description'
       }
     ],
-  },
-  name: 'ListPage',
-  data() {
-    return {
-      listdata: listData,
-    }
   },
 }
 </script>
