@@ -14,10 +14,9 @@
  - [Firebase](https://firebase.google.com/)
  - [Figma](https://www.figma.com/)
   
-## View Website
-
-Nuxt.js로 개발 - https://nuxtvuefolio.web.app/
-Vue3로 개발 - https://swvuefolio.web.app/
+## Visit Website
+- Nuxt.js로 개발 - https://nuxtvuefolio.web.app/
+- Vue3.X로 개발 - https://swvuefolio.web.app/
 
   
 ## Run it

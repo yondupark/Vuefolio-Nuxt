@@ -6,8 +6,6 @@
             <h2>
               Hello World!<br />
               I’m <span>S.W Park.</span>
-              <number class="number" :from="0" :to="2020" :duration="2"/>
-
             </h2>
             <div> 
               <p>
@@ -22,7 +20,7 @@
             </div>
             <div class="main_links">
               <nuxt-link to="/Career"  class="button link">Career</nuxt-link>
-              <a class="button github" href="https://github.com/yondupark/vuefolio" target="_blank">Github</a>
+              <a class="button github" href="https://github.com/yondupark/Vuefolio-Nuxt" target="_blank">Github</a>
               <a class="button figma" href="https://www.figma.com/file/7aZxc1H1u0QAb4Vu4jyScP/My-Porfolios?node-id=0%3A1" target="_blank">Figma</a>
             </div>
           </div>
