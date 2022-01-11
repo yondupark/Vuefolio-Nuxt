@@ -210,6 +210,16 @@
 
 <script>
 export default {
+  head: {
+    title: 'Career',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'description'
+      }
+    ],
+  },
   name: 'CareerPage'
 };
 </script>

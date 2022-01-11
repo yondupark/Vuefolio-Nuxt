@@ -40,6 +40,16 @@
 
 <script>
 export default {
+  head: {
+    title: 'Review',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'description'
+      }
+    ],
+  },
   name: 'ReviewPage'
 };
 </script>

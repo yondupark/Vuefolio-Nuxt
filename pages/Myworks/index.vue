@@ -7,7 +7,7 @@
       </div>
       <ul class="v_listup">
           <li v-for="(board, idx) in listdata" :key="idx">
-            <nuxt-link to="/Myworks/WorksDetail">
+            <nuxt-link to="Myworks/WorksDetail/0">
                 <div class="image">
                     <img :src="`${board.Image}`" alt="">
                 </div>
@@ -26,7 +26,17 @@
 import listData from '@/static/listdata.js';
 
 export default {
-    name: 'ListPage',
+  head: {
+    title: 'My Works Lists',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'description'
+      }
+    ],
+  },
+  name: 'ListPage',
   data() {
     return {
       listdata: listData,
