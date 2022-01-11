@@ -7,7 +7,7 @@
       </div>
       <ul class="v_listup">
           <li v-for="(board, idx) in listdata" :key="idx">
-            <nuxt-link to="Myworks/WorksDetail/0">
+            <nuxt-link :to="{ name: 'Myworks', params: { id: idx }}">
                 <div class="image">
                     <img :src="`${board.Image}`" alt="">
                 </div>
