@@ -51,6 +51,6 @@ export default {
   build: {},
   // 프로젝트 폴더 전의 폴더에 public으로 생성
   generate: {
-    dir: '../public'
+    dir: '../buildedNuxt/public'
   }
 }
